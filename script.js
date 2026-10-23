@@ -5,7 +5,7 @@
 
 // ==============================================================================
 // رابط Google Sheets (Google Apps Script Web App)
-// ضع رابط الـ Web App الخاص بك بين القوسين بالأسفل:
+// ملاحظة هامة: يجب أن يبدأ الرابط بـ https://script.google.com/macros/s/ وينتهي بـ /exec
 // مثال: const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfyc.../exec';
 // ==============================================================================
 const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbyxCqddxT6om1V3WY2544IWZX6ZyudK8H4AAo03BPhFli4gY1iTjwcvXduzJ6hX-aJ9qA/exec';
@@ -297,6 +297,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // إرسال البيانات بتنسيق JSON إلى Google Sheets
             if (GOOGLE_SHEET_URL && GOOGLE_SHEET_URL.trim() !== '') {
+                if (GOOGLE_SHEET_URL.includes('/library/')) {
+                    console.error('⚠️ تنبيه: الرابط المدخل في GOOGLE_SHEET_URL هو رابط مكتبة (Library) وليس رابط Web App صالح! يجب أن ينتهي الرابط بـ /exec.');
+                }
                 try {
                     await fetch(GOOGLE_SHEET_URL, {
                         method: 'POST',
@@ -306,11 +309,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         },
                         body: JSON.stringify(orderPayload)
                     });
+                    console.log('✅ تم إرسال الطلب بنجاح إلى شيت جوجل:', orderPayload);
                 } catch (error) {
-                    console.error('حدث خطأ أثناء الإرسال إلى Google Sheets:', error);
+                    console.error('❌ حدث خطأ أثناء الإرسال إلى Google Sheets:', error);
                 }
             } else {
-                console.info('ملاحظة: يمكنك ربط Google Sheets بوضع رابط الـ Web App في GOOGLE_SHEET_URL داخل script.js.');
+                console.info('ℹ️ ملاحظة: يمكنك ربط Google Sheets بوضع رابط الـ Web App في GOOGLE_SHEET_URL داخل script.js.');
             }
 
             // إعادة تعيين مظهر الزر

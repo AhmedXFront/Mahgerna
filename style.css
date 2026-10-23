@@ -265,6 +265,14 @@ html:not(.dark) .gallery-btn.active {
     background-color: #f39c12 !important;
     color: #020617 !important;
 }
+/* التحكم الدقيق في ظهور واختفاء المودال */
+#orderModal.hidden {
+    display: none !important;
+}
+
+#orderModal:not(.hidden) {
+    display: flex !important;
+}
 
 /* النافذة المنبثقة لتأكيد الطلب (Modal) في الوضع النهاري */
 html:not(.dark) #orderModal {
