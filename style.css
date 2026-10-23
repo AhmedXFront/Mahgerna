@@ -1,0 +1,300 @@
+/* ===================================================
+   محاجرنا - ملف التنسيقات الرئيسي (style.css)
+   دعم الوضع الليلي (Dark Mode) والنهاري (Light Mode) بالكامل
+=================================================== */
+
+/* ==========================================
+   1. المتغيرات اللونية (Theme CSS Variables)
+========================================== */
+:root {
+    --bg-page: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-card-subtle: #f1f5f9;
+    --bg-input: #ffffff;
+    --bg-nav: rgba(255, 255, 255, 0.95);
+    --border-color: #e2e8f0;
+    --border-subtle: #cbd5e1;
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+    --industrial-gradient: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+    --scrollbar-track: #f1f5f9;
+    --scrollbar-thumb: #cbd5e1;
+}
+
+html.dark {
+    --bg-page: #141619;
+    --bg-card: #1e2228;
+    --bg-card-subtle: #16191d;
+    --bg-input: #0f172a;
+    --bg-nav: rgba(18, 20, 23, 0.95);
+    --border-color: #2d333f;
+    --border-subtle: #3f4756;
+    --text-primary: #ffffff;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --industrial-gradient: linear-gradient(135deg, #1e2228 0%, #141619 100%);
+    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    --scrollbar-track: #141619;
+    --scrollbar-thumb: #2d333f;
+}
+
+/* ==========================================
+   2. القواعد الأساسية والتدرجات
+========================================== */
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-secondary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* انسيابية تبديل الثيم */
+body, header, nav, section, footer, div, input, select, textarea, button, a {
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Glowing Effects & Industrial Accent Styles */
+.amber-glow {
+    box-shadow: 0 0 25px rgba(243, 156, 18, 0.25);
+}
+
+.amber-border-glow:focus {
+    box-shadow: 0 0 15px rgba(243, 156, 18, 0.4);
+}
+
+.industrial-gradient {
+    background: var(--industrial-gradient) !important;
+}
+
+.accent-gradient {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #f39c12;
+}
+
+/* ==========================================
+   3. زر تبديل الوضع (Theme Toggle Button)
+========================================== */
+.theme-toggle-btn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-card);
+    color: var(--text-secondary);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.theme-toggle-btn:hover {
+    border-color: #f39c12;
+    transform: rotate(12deg) scale(1.05);
+}
+
+/* ==========================================
+   4. تخصيص الوضع النهاري (Light Mode)
+========================================== */
+html:not(.dark) body {
+    background-color: #f8fafc !important;
+    color: #334155;
+}
+
+/* الهيدر وشريط التنقل */
+html:not(.dark) header {
+    background-color: rgba(255, 255, 255, 0.94) !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+html:not(.dark) header nav a {
+    color: #334155 !important;
+}
+
+html:not(.dark) header nav a:hover {
+    color: #d97706 !important;
+}
+
+html:not(.dark) #mobileMenu {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+html:not(.dark) #mobileMenu a {
+    border-color: #f1f5f9 !important;
+    color: #334155 !important;
+}
+
+html:not(.dark) #mobileMenu a:hover {
+    color: #d97706 !important;
+}
+
+/* ألوان الخلفيات في الوضع النهاري */
+html:not(.dark) .bg-brand-dark {
+    background-color: #f8fafc !important;
+}
+
+html:not(.dark) .bg-brand-card {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+html:not(.dark) .bg-brand-card\/40,
+html:not(.dark) .bg-brand-card\/70,
+html:not(.dark) .bg-brand-card\/90 {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .bg-\[\#101214\],
+html:not(.dark) .bg-\[\#121417\]\/95 {
+    background-color: #f1f5f9 !important;
+    border-color: #e2e8f0 !important;
+}
+
+/* الحدود والفواصل */
+html:not(.dark) .border-brand-border,
+html:not(.dark) .border-brand-border\/40,
+html:not(.dark) .border-brand-border\/50,
+html:not(.dark) .border-brand-border\/60,
+html:not(.dark) .border-slate-800 {
+    border-color: #e2e8f0 !important;
+}
+
+/* النصوص في الوضع النهاري */
+html:not(.dark) .text-white {
+    color: #0f172a !important;
+}
+
+html:not(.dark) .text-slate-200 {
+    color: #1e293b !important;
+}
+
+html:not(.dark) .text-slate-300 {
+    color: #334155 !important;
+}
+
+html:not(.dark) .text-slate-400 {
+    color: #64748b !important;
+}
+
+html:not(.dark) .text-slate-500 {
+    color: #64748b !important;
+}
+
+/* استثناءات مهمة: العناصر التي يجب أن تحتفظ بلون نص أبيض */
+html:not(.dark) .bg-emerald-500,
+html:not(.dark) .bg-emerald-600,
+html:not(.dark) a.bg-emerald-500,
+html:not(.dark) button.bg-emerald-600,
+html:not(.dark) .gallery-item .text-white,
+html:not(.dark) .keep-white,
+html:not(.dark) #orderModal .bg-emerald-500\/20,
+html:not(.dark) .top-announcement-bar,
+html:not(.dark) footer .text-white {
+    color: #ffffff !important;
+}
+
+/* نصوص كروت المعرض فوق الصور المظلمة */
+html:not(.dark) .gallery-item h5,
+html:not(.dark) .gallery-item p {
+    color: #ffffff !important;
+}
+
+/* مدخلات النماذج في الوضع النهاري */
+html:not(.dark) input,
+html:not(.dark) select,
+html:not(.dark) textarea,
+html:not(.dark) .bg-slate-900,
+html:not(.dark) .bg-slate-800 {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+    color: #94a3b8 !important;
+}
+
+html:not(.dark) input:focus,
+html:not(.dark) select:focus,
+html:not(.dark) textarea:focus {
+    background-color: #ffffff !important;
+    border-color: #f39c12 !important;
+    box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.15) !important;
+}
+
+/* صندوق نتائج حاسبة الطوب */
+html:not(.dark) .bg-slate-900\/90 {
+    background-color: #f1f5f9 !important;
+    border-color: #e2e8f0 !important;
+}
+
+/* أزرار الفلترة في المعرض في الوضع النهاري */
+html:not(.dark) .gallery-btn:not(.active) {
+    background-color: #ffffff !important;
+    color: #475569 !important;
+    border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .gallery-btn.active {
+    background-color: #f39c12 !important;
+    color: #020617 !important;
+}
+
+/* النافذة المنبثقة لتأكيد الطلب (Modal) في الوضع النهاري */
+html:not(.dark) #orderModal {
+    background-color: rgba(15, 23, 42, 0.7) !important;
+}
+
+html:not(.dark) #orderModal .bg-brand-card {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+}
+
+html:not(.dark) #orderModal .bg-slate-900 {
+    background-color: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+}
+
+/* الفوتر في الوضع النهاري (تصميم أنيق بتباين عالٍ وداكن يعطي فخامة للموقع) */
+html:not(.dark) footer.bg-\[\#0b0c0e\] {
+    background-color: #0f172a !important;
+    border-color: #1e293b !important;
+}
+
+html:not(.dark) footer .text-white {
+    color: #f8fafc !important;
+}
+
+html:not(.dark) footer .text-slate-400 {
+    color: #94a3b8 !important;
+}
+
+html:not(.dark) footer .text-slate-500 {
+    color: #64748b !important;
+}
