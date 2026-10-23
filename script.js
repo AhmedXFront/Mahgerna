@@ -8,7 +8,7 @@
 // ضع رابط الـ Web App الخاص بك بين القوسين بالأسفل:
 // مثال: const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfyc.../exec';
 // ==============================================================================
-const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxwELE6636YFcluNAFt8BK6k8SE3NOCnEeVZpH-ojUcus2tAXaJzUHFl69d1Nfb6mwcMg/exec';
+const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbyxCqddxT6om1V3WY2544IWZX6ZyudK8H4AAo03BPhFli4gY1iTjwcvXduzJ6hX-aJ9qA/exec';
 
 // Global functions for inline HTML event handlers
 window.closeOrderModal = function () {
