@@ -51,7 +51,17 @@ body {
 }
 
 /* انسيابية تبديل الثيم */
-body, header, nav, section, footer, div, input, select, textarea, button, a {
+body,
+header,
+nav,
+section,
+footer,
+div,
+input,
+select,
+textarea,
+button,
+a {
     transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -265,6 +275,7 @@ html:not(.dark) .gallery-btn.active {
     background-color: #f39c12 !important;
     color: #020617 !important;
 }
+
 /* التحكم الدقيق في ظهور واختفاء المودال */
 #orderModal.hidden {
     display: none !important;
@@ -293,6 +304,10 @@ html:not(.dark) #orderModal .bg-slate-900 {
 html:not(.dark) footer.bg-\[\#0b0c0e\] {
     background-color: #0f172a !important;
     border-color: #1e293b !important;
+}
+
+.box {
+    color: white;
 }
 
 html:not(.dark) footer .text-white {
