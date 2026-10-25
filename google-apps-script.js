@@ -64,16 +64,16 @@ function doPost(e) {
     }
 
     var orderCode = data.orderCode || ("#MQ-" + Math.floor(1000 + Math.random() * 9000));
-    var date      = data.date || new Date().toLocaleString("ar-EG");
-    var fullName  = data.fullName || data.name || "بدون اسم";
-    var phone     = data.phone || "";
-    var type      = data.type || "";
-    var quantity  = data.quantity || "";
-    var address   = data.address || "";
-    var notes     = data.notes || "لا يوجد";
+    var date = data.date || new Date().toLocaleString("ar-EG");
+    var fullName = data.fullName || data.name || "بدون اسم";
+    var phone = data.phone || "";
+    var type = data.type || "";
+    var quantity = data.quantity || "";
+    var address = data.address || "";
+    var notes = data.notes || "لا يوجد";
 
     // وضع علامة ' قبل رقم الهاتف ليظهر الصفر الأول ولا يحذفه إكسل/جوجل شيتس
-    var formattedPhone = phone ? ("'" + phone) : "";
+    var formattedPhone = phone ? ("+20" + phone) : "";
 
     // إضافة صف الطلب في الشيت
     sheet.appendRow([
