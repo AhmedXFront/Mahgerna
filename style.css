@@ -306,7 +306,7 @@ html:not(.dark) footer.bg-\[\#0b0c0e\] {
     border-color: #1e293b !important;
 }
 
-.box {
+div .box {
     color: white;
 }
 
