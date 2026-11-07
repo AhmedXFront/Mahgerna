@@ -73,7 +73,7 @@ window.sendOrderViaWhatsApp = function () {
 
     const waMessage = `طلب جديد من موقع محاجرنا 🏗️%0A----------------------------------%0A👤 *الاسم:* ${encodeURIComponent(name)}%0A📞 *الهاتف:* ${encodeURIComponent(phone)}%0A🧱 *النوع:* ${encodeURIComponent(brickType)}%0A📦 *الكمية:* ${encodeURIComponent(quantity)}%0A📍 *العنوان:* ${encodeURIComponent(location)}%0A📝 *ملاحظات:* ${encodeURIComponent(notes || 'لا يوجد')}`;
 
-    const waUrl = `https://wa.me/201031223882?text=${waMessage}`;
+    const waUrl = `https://wa.me/201018235479?text=${waMessage}`;
     window.open(waUrl, '_blank');
 };
 
